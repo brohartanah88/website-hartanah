@@ -28,7 +28,7 @@ Boleh edit terus di laman GitHub: buka fail, tekan ikon pensel ✏️, ubah, kem
 > Repo mesti **Public** untuk GitHub Pages percuma.
 
 ### Domain sendiri (pilihan)
-Jika ada domain (contoh `brohartanah.com.my`), masukkan di **Settings → Pages → Custom domain** dan ikut arahan DNS GitHub. Hosting tetap percuma; anda hanya bayar domain.
+Jika ada domain (contoh `khairulhartanah.com`), masukkan di **Settings → Pages → Custom domain** dan ikut arahan DNS GitHub. Hosting tetap percuma; anda hanya bayar domain.
 
 ### Pilihan hos percuma lain
 Netlify, Cloudflare Pages atau Vercel juga percuma. Sambungkan repo ini, tiada build command, dan publish directory `/`.

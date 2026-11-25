@@ -9,7 +9,7 @@
    ========================================================= */
 
 const TETAPAN = {
-  namaAgensi: "Bro Hartanah",
+  namaAgensi: "Khairul Hartanah",
   slogan: "Cari rumah idaman anda dengan mudah",
   // Format antarabangsa tanpa "+" atau "-" (contoh: 60123456789)
   noWhatsApp: "60123456789",
