@@ -1,0 +1,238 @@
+<!doctype html>
+<html lang="ms">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Bro Hartanah | Rumah, Kondo & Tanah Untuk Dijual dan Disewa</title>
+  <meta name="description" content="Senarai hartanah untuk dijual dan disewa di Malaysia: rumah teres, kondominium, banglo, tanah dan kedai. Hubungi kami terus melalui WhatsApp.">
+  <meta property="og:title" content="Bro Hartanah">
+  <meta property="og:description" content="Rumah, kondo, banglo & tanah untuk dijual dan disewa.">
+  <meta property="og:type" content="website">
+  <link rel="icon" href="images/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!-- ========== NAVIGASI ========== -->
+  <header class="nav" id="nav">
+    <div class="container nav-inner">
+      <a href="#" class="logo">
+        <img src="images/favicon.svg" alt="" width="34" height="34">
+        <span data-agensi>Bro Hartanah</span>
+      </a>
+      <button class="nav-toggle" id="navToggle" aria-label="Buka menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+      <nav class="nav-links" id="navLinks">
+        <a href="#hartanah">Hartanah</a>
+        <a href="#kalkulator">Kalkulator Pinjaman</a>
+        <a href="#tentang">Tentang Kami</a>
+        <a href="#hubungi" class="btn btn-sm btn-primary">Hubungi</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- ========== HERO ========== -->
+  <section class="hero">
+    <div class="container hero-inner">
+      <span class="eyebrow">Ejen Hartanah Dipercayai</span>
+      <h1 data-slogan>Cari rumah idaman anda dengan mudah</h1>
+      <p class="hero-sub">Rumah teres, kondominium, banglo, tanah dan kedai untuk dijual dan disewa. Tanya terus melalui WhatsApp, kami balas dengan cepat.</p>
+
+      <form class="search" id="carianHero">
+        <div class="search-tabs" role="tablist">
+          <button type="button" class="tab active" data-status="">Semua</button>
+          <button type="button" class="tab" data-status="Jual">Untuk Dijual</button>
+          <button type="button" class="tab" data-status="Sewa">Untuk Disewa</button>
+        </div>
+        <div class="search-row">
+          <input type="search" id="heroKata" placeholder="Cari lokasi, contoh: Shah Alam" aria-label="Kata kunci">
+          <select id="heroJenis" aria-label="Jenis hartanah"><option value="">Semua jenis</option></select>
+          <button type="submit" class="btn btn-primary">Cari</button>
+        </div>
+      </form>
+
+      <div class="stats">
+        <div><strong id="statJumlah">0</strong><span>Hartanah</span></div>
+        <div><strong id="statJual">0</strong><span>Untuk dijual</span></div>
+        <div><strong id="statSewa">0</strong><span>Untuk disewa</span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== SENARAI HARTANAH ========== -->
+  <section class="section" id="hartanah">
+    <div class="container">
+      <div class="section-head">
+        <div>
+          <h2>Senarai Hartanah</h2>
+          <p class="muted" id="kiraanHasil">Memuatkan…</p>
+        </div>
+      </div>
+
+      <div class="filters" id="penapis">
+        <input type="search" id="fKata" placeholder="Kata kunci / lokasi" aria-label="Kata kunci">
+        <select id="fStatus" aria-label="Status">
+          <option value="">Jual & Sewa</option>
+          <option value="Jual">Untuk Dijual</option>
+          <option value="Sewa">Untuk Disewa</option>
+        </select>
+        <select id="fJenis" aria-label="Jenis"><option value="">Semua jenis</option></select>
+        <select id="fNegeri" aria-label="Negeri"><option value="">Semua negeri</option></select>
+        <select id="fBilik" aria-label="Bilik tidur">
+          <option value="0">Bilik: Semua</option>
+          <option value="1">1+ bilik</option>
+          <option value="2">2+ bilik</option>
+          <option value="3">3+ bilik</option>
+          <option value="4">4+ bilik</option>
+          <option value="5">5+ bilik</option>
+        </select>
+        <select id="fSusun" aria-label="Susunan">
+          <option value="unggulan">Susun: Pilihan</option>
+          <option value="harga-naik">Harga: Rendah ke Tinggi</option>
+          <option value="harga-turun">Harga: Tinggi ke Rendah</option>
+          <option value="keluasan">Keluasan: Terbesar</option>
+        </select>
+        <button type="button" class="btn btn-ghost" id="fReset">Reset</button>
+      </div>
+
+      <div class="grid" id="grid"></div>
+      <div class="kosong" id="kosong" hidden>
+        <p><strong>Tiada hartanah sepadan.</strong></p>
+        <p class="muted">Cuba ubah penapis, atau WhatsApp kami. Kami boleh bantu carikan.</p>
+        <a class="btn btn-wa" id="kosongWa" target="_blank" rel="noopener">WhatsApp Kami</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== KALKULATOR ========== -->
+  <section class="section alt" id="kalkulator">
+    <div class="container calc">
+      <div class="calc-text">
+        <h2>Kalkulator Pinjaman Rumah</h2>
+        <p class="muted">Anggaran bayaran bulanan pinjaman perumahan anda. Kadar sebenar bergantung kepada bank dan profil kewangan anda.</p>
+        <ul class="tips">
+          <li>Deposit biasa: 10% daripada harga rumah</li>
+          <li>Tempoh maksimum: 35 tahun atau sehingga umur 70</li>
+          <li>Kadar faedah semasa lazimnya sekitar 3.8% hingga 4.5% setahun</li>
+        </ul>
+      </div>
+      <form class="calc-card" id="kalkForm" onsubmit="return false">
+        <label>Harga hartanah (RM)
+          <input type="number" id="kHarga" value="500000" min="0" step="1000" inputmode="numeric">
+        </label>
+        <label>Deposit (%)
+          <input type="number" id="kDeposit" value="10" min="0" max="100" step="1" inputmode="decimal">
+        </label>
+        <div class="two">
+          <label>Kadar faedah (% setahun)
+            <input type="number" id="kKadar" value="4.2" min="0" step="0.05" inputmode="decimal">
+          </label>
+          <label>Tempoh (tahun)
+            <input type="number" id="kTempoh" value="35" min="1" max="40" step="1" inputmode="numeric">
+          </label>
+        </div>
+        <div class="calc-result">
+          <span>Anggaran bayaran bulanan</span>
+          <strong id="kBulanan">RM 0</strong>
+          <small id="kPinjaman" class="muted"></small>
+        </div>
+      </form>
+    </div>
+  </section>
+
+  <!-- ========== TENTANG ========== -->
+  <section class="section" id="tentang">
+    <div class="container">
+      <h2 class="center">Kenapa Pilih Kami?</h2>
+      <div class="features">
+        <div class="feature">
+          <div class="f-icon">🤝</div>
+          <h3>Khidmat Jujur</h3>
+          <p class="muted">Maklumat hartanah yang telus. Tiada caj tersembunyi kepada pembeli.</p>
+        </div>
+        <div class="feature">
+          <div class="f-icon">⚡</div>
+          <h3>Respon Pantas</h3>
+          <p class="muted">Tanya melalui WhatsApp dan kami akan membalas secepat mungkin.</p>
+        </div>
+        <div class="feature">
+          <div class="f-icon">📑</div>
+          <h3>Bantuan Pinjaman</h3>
+          <p class="muted">Kami bantu urusan pinjaman bank, guaman dan dokumen sehingga serah kunci.</p>
+        </div>
+        <div class="feature">
+          <div class="f-icon">📍</div>
+          <h3>Pakar Kawasan</h3>
+          <p class="muted">Kenal kawasan dengan baik: sekolah, akses jalan dan potensi nilai hartanah.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== HUBUNGI ========== -->
+  <section class="section alt" id="hubungi">
+    <div class="container contact">
+      <div>
+        <h2>Hubungi Kami</h2>
+        <p class="muted">Nak jual, beli atau sewa hartanah? Isi borang ini dan mesej anda akan dihantar terus ke WhatsApp kami.</p>
+        <ul class="contact-list">
+          <li><span>📞</span> <a id="cTel" href="#">-</a></li>
+          <li><span>✉️</span> <a id="cEmail" href="#">-</a></li>
+          <li><span>📍</span> <span id="cAlamat">-</span></li>
+        </ul>
+        <div class="social" id="social"></div>
+      </div>
+      <form class="contact-card" id="borangHubungi">
+        <label>Nama
+          <input type="text" id="hNama" required autocomplete="name" placeholder="Nama anda">
+        </label>
+        <label>Saya ingin
+          <select id="hTujuan">
+            <option>Membeli hartanah</option>
+            <option>Menyewa hartanah</option>
+            <option>Menjual hartanah saya</option>
+            <option>Menyewakan hartanah saya</option>
+            <option>Bertanya tentang pinjaman</option>
+          </select>
+        </label>
+        <label>Mesej
+          <textarea id="hMesej" rows="4" placeholder="Contoh: Saya cari rumah teres 3 bilik di Shah Alam, bajet RM500k"></textarea>
+        </label>
+        <button type="submit" class="btn btn-wa btn-block">Hantar melalui WhatsApp</button>
+      </form>
+    </div>
+  </section>
+
+  <!-- ========== FOOTER ========== -->
+  <footer class="footer">
+    <div class="container footer-inner">
+      <div>
+        <strong data-agensi>Bro Hartanah</strong>
+        <p class="muted small" id="fREN"></p>
+      </div>
+      <p class="muted small">© <span id="tahun"></span> <span data-agensi>Bro Hartanah</span>. Hak cipta terpelihara.</p>
+    </div>
+  </footer>
+
+  <!-- Butang WhatsApp terapung -->
+  <a class="wa-float" id="waFloat" target="_blank" rel="noopener" aria-label="WhatsApp kami">
+    <svg viewBox="0 0 32 32" width="30" height="30" aria-hidden="true"><path fill="currentColor" d="M16 3C8.8 3 3 8.7 3 15.8c0 2.5.7 4.9 2 7L3 29l6.4-2c2 1.1 4.3 1.7 6.6 1.7 7.2 0 13-5.7 13-12.8S23.2 3 16 3zm0 23.4c-2.1 0-4.1-.6-5.9-1.6l-.4-.2-3.8 1.2 1.2-3.7-.3-.4c-1.2-1.8-1.8-3.8-1.8-5.9C5 10 10 5.2 16 5.2S27 10 27 15.9 22 26.4 16 26.4zm6-7.8c-.3-.2-1.9-.9-2.2-1-.3-.1-.5-.2-.7.2-.2.3-.8 1-1 1.2-.2.2-.4.2-.7.1-.3-.2-1.4-.5-2.6-1.6-1-.9-1.6-1.9-1.8-2.2-.2-.3 0-.5.1-.7l.5-.6c.2-.2.2-.4.3-.6.1-.2 0-.4 0-.6l-1-2.4c-.3-.6-.5-.5-.7-.5h-.6c-.2 0-.6.1-.9.4-.3.3-1.2 1.1-1.2 2.7s1.2 3.1 1.4 3.4c.2.2 2.4 3.6 5.7 5 .8.3 1.4.5 1.9.7.8.3 1.5.2 2.1.1.6-.1 1.9-.8 2.2-1.5.3-.7.3-1.4.2-1.5-.1-.2-.3-.3-.6-.4z"/></svg>
+  </a>
+
+  <!-- Modal butiran hartanah -->
+  <div class="modal" id="modal" hidden>
+    <div class="modal-backdrop" data-tutup></div>
+    <div class="modal-box" role="dialog" aria-modal="true" aria-labelledby="mTajuk">
+      <button class="modal-close" data-tutup aria-label="Tutup">×</button>
+      <div id="modalIsi"></div>
+    </div>
+  </div>
+
+  <script src="data/hartanah.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>
